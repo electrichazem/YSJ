@@ -144,11 +144,18 @@ void startScanningLayers() {
 
     // Add to the result vector
     result.push_back(data);
-
     d1 = d2;
+    // Send Data to Raspberry pi
+    Serial.print(data.layer[0]);
+    Serial.print(',');
+    Serial.print(data.layer[1]);
+    Serial.print(',');
+    Serial.print(data.layer[2]);
+    Serial.print(',');
+    Serial.print(data.layer[3]);
+    Serial.print(',');
+    Serial.print(data.delta_h);
   }
-
-  
 }
 bool detectObstacleAt90Degree(){
   servo.write(90);
